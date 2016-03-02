@@ -8,17 +8,10 @@ struct ListNode {
 class Solution {
 public:
     void deleteNode(ListNode* node) {
-    	ListNode* h = node;
-    	ListNode* t;
-    	while(h -> next != NULL){    		
-			t = h -> next;
-			int temp = h -> val;
-			h -> val = t -> val;
-			t -> val = temp;
-			t = h;			
-			h = h -> next;
-    	}
-    	t -> next = NULL;
+    	if(node == NULL)
+    		return;
+    	node -> val = node -> next -> val;
+    	node -> next = node -> next -> next;
 	}        
 };
 int main() {
