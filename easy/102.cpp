@@ -1,11 +1,3 @@
-//
-//  main.cpp
-//  leetcode
-//
-//  Created by 缪慧 on 3/10/16.
-//  Copyright © 2016 miaohui. All rights reserved.
-//
-
 #include <iostream>
 #include <vector>
 #include <stdio.h>
@@ -22,7 +14,7 @@ struct TreeNode {
 
 class Solution {
 public:
-    vector<vector<int>> levelOrder(TreeNode* root) {
+    vector<vector<int> > levelOrder(TreeNode* root) {
         vector<vector<int> > res;
         if (root == NULL) {
             return res;
@@ -36,13 +28,23 @@ public:
             q.pop();
             if (t != NULL) {
                 temp.push_back(t -> val);
-
+                if (t->left)
+                	q.push(t->left);
+                if (t->right)
+                	q.push(t->right);
             }
+            else {
+            	if(!temp.empty()) {				
+	            	res.push_back(temp);
+	            	q.push(NULL);
+	            	temp.clear();
+	            }
+			}
         }
         return res;
     }
 };
 
-int main() {
+int main() {	
     return 0;
 }
