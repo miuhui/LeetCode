@@ -5,7 +5,6 @@
 //  Created by 缪慧 on 3/10/16.
 //  Copyright © 2016 miaohui. All rights reserved.
 //
-
 #include <iostream>
 #include <vector>
 #include <stdio.h>
@@ -43,7 +42,7 @@ public:
                 }
             }
         }
-        
+
         //scan col by col
         for (int i = 0; i < 9; i++) {
             vector<char> judgeElementExist;
@@ -61,9 +60,9 @@ public:
                 }
             }
         }
-        
+
         //scan every sub_box
-        
+
         for (int i = 0; i <= 6; i += 3) {
             for (int j = 0; j <= 6; j += 3) {
                 vector<char> judgeElementExist;
@@ -93,6 +92,6 @@ public:
 
 
 int main() {
-    
+
     return 0;
 }

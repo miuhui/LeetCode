@@ -15,6 +15,7 @@ public:
                 digits[i] += jinwei;
                 jinwei = 0;
                 continue;
+                
             }
             else if (digits[i] == 9 && jinwei == 1) {
                 digits[i] = 0;
