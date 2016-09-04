@@ -137,3 +137,52 @@ int main()
 	getchar();
 	return 0;
 }
+// leetcode.cpp : Defines the entry point for the console application.
+//
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <ctime>
+#include <time.h>
+
+using namespace std;
+
+class Solution {
+public:	
+	vector<vector<int>> combinationSum3(int k, int n) const
+	{
+		vector<vector<int>> result;
+		vector<int> onePair;
+		auto level = 1;
+		CoreCombination(result, onePair, n, 1, k);
+		return result;
+	}
+	void CoreCombination(vector<vector<int>> &result,vector<int> &onePair,int sum,int level,int num) const
+	{
+		if (sum == 0 && num == 0)
+		{
+			result.push_back(onePair);
+			return;
+		}
+		if (num == 0)
+		{
+			return;
+		}
+		for (auto i = level; i <= 9 ;i++)
+		{
+			onePair.push_back(i);
+			CoreCombination(result, onePair, sum - i, i + 1, num - 1);
+			onePair.pop_back();
+		}
+	}
+};
+
+int main()
+{	
+	Solution s;
+	auto result = s.combinationSum3(3, 9);
+	cout << "" << endl;
+	getchar();
+	return 0;
+}
