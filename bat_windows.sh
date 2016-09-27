@@ -3,6 +3,7 @@
 #运行格式 ./bat.sh leetcode 题目编号 leetcode题目名称
 cat  C:/Users/MiaoHui/OneDrive/Projects/leetcode/leetcode/leetcode.cpp \
 			 	>> C:/Users/MiaoHui/Documents/GitHub/LeetCode/Medium/$1.cpp
+git pull
 git add  Medium/$1.cpp
 git commit -m "$2"
 git push -u origin master
